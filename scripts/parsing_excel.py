@@ -46,18 +46,22 @@ def gen_excel_as_text(excel_path, text_path, excel_cf, ALPHABET_COL_NAME):
         shutil.rmtree(text_path)
     except:
         pass
+    
+    for sheet_name in workbook.sheetnames:
+        if sheet_name in excel_cf.keys():
+            sheet_properties=excel_cf[sheet_name]
+            try:
+                sheet_keys=sheet_properties['KEYS']
+            except:
+                sheet_keys=False
 
-    for sheet_name, sheet_properties in excel_cf.items():
-        try:
-            sheet_keys=sheet_properties['KEYS']
-        except:
+            try:
+                sheet_header_line=sheet_properties['HEADER_LINE']
+            except:
+                sheet_header_line=False
+        else:
             sheet_keys=False
-
-        try:
-            sheet_header_line=sheet_properties['HEADER_LINE']
-        except:
             sheet_header_line=False
-
 
         #GET DATA
         log_with_timer(f"{sheet_name}: reading data...")

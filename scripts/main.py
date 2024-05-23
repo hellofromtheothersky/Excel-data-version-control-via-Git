@@ -94,10 +94,8 @@ if __name__ == '__main__':
                     elif new_files:
                         excel_paths_to_add_auto_parsing.append(path)
                         excel_paths_to_parse.append(path)
-                        excel_text_paths_to_gen.append(path)
-
                     else:
-                        text_path=ALL_EXCEL_AS_TEXT_PATH+get_filename_or_lastfoldername(file)+'/'
+                        text_path=ALL_EXCEL_AS_TEXT_PATH+get_filename_or_lastfoldername(path)+'/'
                         new_files, updated_files = get_changed_files(text_path)
                         if new_files or updated_files:
                             excel_text_paths_to_gen.append(path)
@@ -128,20 +126,24 @@ if __name__ == '__main__':
             for path in excel_paths_to_parse:
                 excel_name=get_filename_or_lastfoldername(path)
                 print(f"{path} -> {ALL_EXCEL_AS_TEXT_PATH+excel_name+'/'}")
-                parsing_excel.gen_excel_as_text(path, ALL_EXCEL_AS_TEXT_PATH+excel_name+'/', CF[excel_name], ALPHABET_COL_NAME)
+                excel_cf={}
+                if excel_name in CF.keys(): 
+                    excel_cf=CF[excel_name]
 
+                parsing_excel.gen_excel_as_text(path, ALL_EXCEL_AS_TEXT_PATH+excel_name+'/', excel_cf, ALPHABET_COL_NAME)
 
         if excel_paths_to_add_auto_parsing:
             print('NORMAL EXCEL -> AUTO-PARSING EXCEL')
             print('-----------------------------------')
             for path in excel_paths_to_add_auto_parsing:
-                newexcelpath=path.replace('.xlsx', 'xlsm')
+                os.remove(path)
+                newexcelpath=path.replace('.xlsx', '.xlsm')
                 print(f"{path} -> {newexcelpath}")
                 workbook = xlsxwriter.Workbook(newexcelpath)
                 workbook.add_vba_project('AutoParsing.bin')
                 workbook.close()
+                excel_text_paths_to_gen.append(newexcelpath)
                 
-
         if excel_text_paths_to_gen: 
             print('TEXT -> EXCEL')
             print('-------------')
@@ -152,8 +154,9 @@ if __name__ == '__main__':
                 text_path=ALL_EXCEL_AS_TEXT_PATH+excel_name+'/'
                 print(f"{text_path} -> {path}")
                 generate_excel.gen_excel_from_text(path, text_path, ALPHABET_COL_NAME)
-    except Exception:
+    except Exception as error:
         traceback.print_exc()
+        print(error)
         print("Error! Close after 30 seconds")
         if args.wait: time.sleep(30)
     else:
