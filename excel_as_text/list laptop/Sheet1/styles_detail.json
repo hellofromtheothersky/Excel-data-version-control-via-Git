@@ -1,0 +1,271 @@
+{
+  "width": {
+    "A": 126.7109375,
+    "B": 111.42578125,
+    "C": 10.140625,
+    "D": 10.5703125,
+    "E": 35.28515625,
+    "F": 46.28515625,
+    "G": 123.7109375,
+    "H": 19.7109375,
+    "I": 25.0,
+    "J": 18.85546875,
+    "K": 21.140625,
+    "L": 22.0,
+    "M": 16.85546875,
+    "N": 17.7109375,
+    "O": 21.0,
+    "P": 13.0,
+    "Q": 24.0,
+    "R": 17.0,
+    "S": 19.42578125,
+    "T": 21.0,
+    "U": 26.28515625,
+    "V": 23.5703125,
+    "W": 25.0,
+    "X": 30.42578125,
+    "Y": 40.85546875,
+    "Z": 22.42578125,
+    "AA": 24.0,
+    "AB": 21.85546875,
+    "AC": 18.85546875,
+    "AD": 18.28515625,
+    "AE": 24.5703125,
+    "AF": 13.0,
+    "AG": 28.28515625,
+    "AH": 27.0,
+    "AI": 28.140625,
+    "AJ": 37.42578125,
+    "AK": 28.7109375,
+    "AL": 21.85546875,
+    "AM": 24.7109375,
+    "AN": 23.5703125,
+    "AO": 20.5703125,
+    "AP": 33.28515625,
+    "AQ": 35.5703125,
+    "AR": 32.42578125,
+    "AS": 22.28515625,
+    "AT": 24.5703125,
+    "AU": 97.140625,
+    "AV": 23.7109375,
+    "AW": 29.42578125,
+    "AX": 33.0,
+    "AY": 22.42578125,
+    "AZ": 38.42578125,
+    "BA": 35.140625,
+    "BB": 36.42578125,
+    "BC": 36.85546875,
+    "BD": 35.28515625,
+    "BE": 33.42578125,
+    "BF": 17.0,
+    "BG": 32.28515625,
+    "BH": 19.0,
+    "BI": 35.7109375,
+    "BJ": 50.5703125,
+    "BK": 22.0,
+    "BL": 47.140625,
+    "BM": 32.7109375,
+    "BN": 29.140625,
+    "BO": 31.5703125,
+    "BP": 48.140625,
+    "BQ": 33.85546875,
+    "BR": 26.42578125,
+    "BS": 32.28515625,
+    "BT": 27.5703125,
+    "BU": 23.5703125,
+    "BV": 35.28515625,
+    "BW": 24.7109375,
+    "BX": 25.7109375
+  },
+  "font": {
+    "name=Times New Roman  family=1.0  sz=11.0  b=True": {
+      "objectType": "font",
+      "measure": {
+        "name": "Times New Roman",
+        "family": 1.0,
+        "sz": 11.0,
+        "b": true
+      }
+    },
+    "name=Times New Roman  family=1.0  sz=11.0  type=theme  theme=1": {
+      "objectType": "font",
+      "measure": {
+        "name": "Times New Roman",
+        "family": 1.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1
+          }
+        }
+      }
+    },
+    "name=Times New Roman  family=1.0  sz=11.0  b=True  rgb=FFFF0000  type=rgb": {
+      "objectType": "font",
+      "measure": {
+        "name": "Times New Roman",
+        "family": 1.0,
+        "sz": 11.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFF0000",
+            "type": "rgb"
+          }
+        }
+      }
+    },
+    "name=Times New Roman  family=1.0  sz=11.0  rgb=FFFF0000  type=rgb": {
+      "objectType": "font",
+      "measure": {
+        "name": "Times New Roman",
+        "family": 1.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFF0000",
+            "type": "rgb"
+          }
+        }
+      }
+    }
+  },
+  "border": {
+    "style=thin  type=auto  auto=True  style=thin  type=auto  auto=True  style=thin  type=auto  auto=True  style=thin  type=auto  auto=True  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "left": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "auto",
+                "auto": true
+              }
+            }
+          }
+        },
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "auto",
+                "auto": true
+              }
+            }
+          }
+        },
+        "top": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "auto",
+                "auto": true
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "auto",
+                "auto": true
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "outline=True": {
+      "objectType": "border",
+      "measure": {
+        "outline": true
+      }
+    }
+  },
+  "fill": {
+    "patternType=solid  rgb=FFFFFF00  type=rgb  type=indexed  indexed=64": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFFFF00",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "indexed",
+            "indexed": 64
+          }
+        }
+      }
+    },
+    "rgb=00000000  type=rgb  rgb=00000000  type=rgb": {
+      "objectType": "fill",
+      "measure": {
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        }
+      }
+    }
+  },
+  "number_format": {
+    "General": {
+      "objectType": "number_format",
+      "measure": "General"
+    }
+  },
+  "protection": {
+    "locked=True": {
+      "objectType": "protection",
+      "measure": {
+        "locked": true
+      }
+    }
+  },
+  "alignment": {
+    "horizontal=center  vertical=top": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "center",
+        "vertical": "top"
+      }
+    },
+    "": {
+      "objectType": "alignment",
+      "measure": {}
+    }
+  }
+}

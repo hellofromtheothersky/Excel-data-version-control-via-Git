@@ -1,0 +1,77 @@
+,0
+A,Tên
+B,Link
+C,Giá
+D,SL máy cũ
+E,Thiết kế & Trọng lượng.Kích thước
+F,Thiết kế & Trọng lượng.Trọng lượng sản phẩm
+G,Thiết kế & Trọng lượng.Chất liệu
+H,Bộ xử lý.Hãng CPU
+I,Bộ xử lý.Công nghệ CPU
+J,Bộ xử lý.Loại CPU
+K,Bộ xử lý.Tốc độ CPU
+L,Bộ xử lý.Tốc độ tối đa
+M,Bộ xử lý.Số nhân
+N,Bộ xử lý.Số luồng
+O,Bộ xử lý.Bộ nhớ đệm
+P,Bộ xử lý.Tốc độ BUS
+Q,RAM.Dung lượng RAM
+R,RAM.Loại RAM
+S,RAM.Tốc độ RAM
+T,RAM.Số khe cắm rời
+U,RAM.Số khe RAM còn lại
+V,RAM.Số RAM onboard
+W,RAM.Hỗ trợ RAM tối đa
+X,Màn hình.Kích thước màn hình
+Y,Màn hình.Công nghệ màn hình
+Z,Màn hình.Độ phân giải
+AA,Màn hình.Loại màn hình
+AB,Màn hình.Tần số quét
+AC,Màn hình.Tấm nền
+AD,Màn hình.Độ sáng
+AE,Màn hình.Tỷ lệ màn hình
+AF,Màn hình.Độ tương phản
+AG,Màn hình.Màn hình cảm ứng
+AH,Đồ họa.Card onboard.Hãng
+AI,Đồ họa.Card onboard.Model
+AJ,Đồ họa.Card onboard.Xung nhịp tối đa
+AK,Đồ họa.Card onboard.Bộ nhớ
+AL,Đồ họa.Card rời.Hãng
+AM,Đồ họa.Card rời.Model
+AN,Đồ họa.Card rời.Bộ nhớ
+AO,Lưu trữ.Kiểu ổ cứng
+AP,Lưu trữ.Hỗ trợ công nghệ Optane
+AQ,Lưu trữ.Tổng số khe cắm SSD/HDD
+AR,Lưu trữ.Số khe SSD/HDD còn lại
+AS,Lưu trữ.SSD.Loại SSD
+AT,Lưu trữ.SSD.Dung lượng
+AU,Giao tiếp & kết nối.Cổng giao tiếp
+AV,Giao tiếp & kết nối.Wifi
+AW,Giao tiếp & kết nối.Bluetooth
+AX,Giao tiếp & kết nối.Webcam
+AY,Âm thanh.Số lượng loa
+AZ,Bàn phím & TouchPad.Kiểu bàn phím
+BA,Bàn phím & TouchPad.Bàn phím số
+BB,Bàn phím & TouchPad.Đèn bàn phím
+BC,Bàn phím & TouchPad.Màu đèn LED
+BD,Thông tin pin & Sạc.Dung lượng pin
+BE,Thông tin pin & Sạc.Power Supply
+BF,Hệ điều hành.OS
+BG,Hệ điều hành.Version
+BH,Hệ điều hành.Type
+BI,Hệ điều hành.Phần mềm khác
+BJ,Thiết kế & Trọng lượng.Bản lề (Hinge / Kickstand)
+BK,Màn hình.Độ phủ màu
+BL,Bàn phím & TouchPad.Công nghệ đèn bàn phím
+BM,Bàn phím & TouchPad.TouchPad
+BN,Thông tin pin & Sạc.Loại PIN
+BO,Đồ họa.Card onboard.Xung nhịp
+BP,Âm thanh.Công nghệ âm thanh
+BQ,Thiết kế & Trọng lượng.Tản nhiệt
+BR,Đồ họa.Card rời.Xung nhịp
+BS,Đồ họa.Card rời.Xung nhịp tối đa
+BT,Lưu trữ.SSD.Tốc độ đọc/ghi
+BU,Lưu trữ.SSD.Chuẩn M2
+BV,Thông tin pin & Sạc.Thông tin thêm
+BW,Lưu trữ.HDD.Kiểu HDD
+BX,Lưu trữ.HDD.Dung lượng
