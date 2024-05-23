@@ -54,6 +54,7 @@ def get_changed_files(path):
 
     # Iterate through the lines and extract the file names
     for line in lines:
+        line=line.strip()
         if line.startswith('A '):
             new_files.append(re.findall(r'\w+\s+["]*(.*)["]*', line)[0])
         elif line.startswith('M '):
@@ -84,7 +85,7 @@ if __name__ == '__main__':
     if not args.action:
         if not args.excelpath:
             for root, dirs, files in os.walk(ALL_EXCEL_PATH):
-                files=[f for f in files if f.endswith('.xlsx') or f.endswith('.xlsm')]
+                files=[f for f in files if not f.startswith('~$') and (f.endswith('.xlsx') or f.endswith('.xlsm'))]
                 for file in files:
                     path=os.path.join(root, file)
                     new_files, updated_files = get_changed_files(path)
@@ -118,7 +119,6 @@ if __name__ == '__main__':
 
     with open('./excel_metadata.json', 'r') as rf:
         CF=json.load(rf)
-    print(excel_text_paths_to_gen)
 
     try:
         if excel_paths_to_parse:
