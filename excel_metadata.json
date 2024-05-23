@@ -1,0 +1,15 @@
+{
+    "My_excel":
+    {
+        "peoples":
+        {
+            "KEYS": ["id"],
+            "HEADER_LINE": 1
+        },
+        "mini":
+        {
+            "KEYS": ["idd", "id"],
+            "HEADER_LINE": 2
+        }
+    }
+}

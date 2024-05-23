@@ -1,0 +1,50 @@
+{
+  "id": {
+    "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  },
+  "object_id": {
+    "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  },
+  "first_name": {
+    "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": "wrapText=True"
+  },
+  "last_name": {
+    "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  },
+  "birthplace": {
+    "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
+    "border": "outline=True",
+    "fill": "patternType=solid  type=theme  theme=5  tint=0.3999755851924192  type=indexed  indexed=64",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  },
+  "affiliation_name": {
+    "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  }
+}
