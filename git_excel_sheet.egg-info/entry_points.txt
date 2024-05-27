@@ -1,0 +1,2 @@
+[console_scripts]
+git-excel-sheet = git_excel_sheet:main

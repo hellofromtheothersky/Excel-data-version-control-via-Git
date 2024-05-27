@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: git-excel-sheet
+Version: 1.1
+Summary: Python CLI tool and library for diffing CSV and JSON files
+Author: Simon Willison
+License: Apache License, Version 2.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Excel-data-version-control-via-Git
+A tool for spreadsheet version control in Excel, created by Python and using with Git

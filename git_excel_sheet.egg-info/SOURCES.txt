@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+git_excel_sheet/__init__.py
+git_excel_sheet/generate_excel.py
+git_excel_sheet/main.py
+git_excel_sheet/parsing_excel.py
+git_excel_sheet.egg-info/PKG-INFO
+git_excel_sheet.egg-info/SOURCES.txt
+git_excel_sheet.egg-info/dependency_links.txt
+git_excel_sheet.egg-info/entry_points.txt
+git_excel_sheet.egg-info/top_level.txt
