@@ -1,6 +1,29 @@
 Dim parentPath As String
-
-
+Function GetPythonPath() As String
+    Dim oShell As Object
+    Dim PythonPath As String
+    Dim PythonPathLines As Variant
+    
+    Set oShell = CreateObject("WScript.Shell")
+    
+    ' Use the 'where' command to find the Python executable
+    PythonPath = Trim(oShell.Exec("where python").StdOut.ReadAll())
+    
+    If PythonPath = "" Then
+        ' Python not found
+        GetPythonPath = ""
+    Else
+        ' Check if there are multiple paths returned
+        PythonPathLines = Split(PythonPath, vbNewLine)
+        If UBound(PythonPathLines) > 0 Then
+            ' Take the first path if there are multiple
+            GetPythonPath = Trim(PythonPathLines(0))
+        Else
+            ' Return the single path
+            GetPythonPath = PythonPath
+        End If
+    End If
+End Function
 Sub FindGitParentFolder()
   Dim currentPath As String
 
@@ -24,7 +47,6 @@ Sub FindGitParentFolder()
   End If
 
 End Sub
-
 Private Sub Workbook_BeforeSave(ByVal SaveAsUI As Boolean, Cancel As Boolean)
     FindGitParentFolder
     Dim objShell As Object
@@ -35,22 +57,11 @@ Private Sub Workbook_BeforeSave(ByVal SaveAsUI As Boolean, Cancel As Boolean)
     filePath = parentPath & "\PYTHON_PATH.txt"
     
     ' Open the file for reading
-    fileNumber = FreeFile
-    Open filePath For Input As fileNumber
+    pythonExePath = GetPythonPath()
     
-    ' Read the contents of the file line by line
-    Do Until EOF(fileNumber)
-        Line Input #fileNumber, Line
-        fileContent = fileContent & Line
-    Loop
-    
-    ' Close the file
-    Close fileNumber
-    
-    pythonExePath = """" & Trim(fileContent) & """"
-    
-    PythonScriptPath = parentPath & "\scripts\main.py"
+    PythonScriptPath = parentPath & "\.src\main.py"
     
     arugument = " --action to_text --wait 1 --excelpath " & """" & ThisWorkbook.FullName & """"
-    objShell.Run pythonExePath & PythonScriptPath & arugument
+    objShell.Run pythonExePath & " " & PythonScriptPath & " " & arugument
 End Sub
+

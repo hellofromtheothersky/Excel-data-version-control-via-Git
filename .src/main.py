@@ -14,6 +14,7 @@ import time
 ALL_EXCEL_AS_TEXT_PATH='./excel_as_text/'
 ALL_EXCEL_PATH='./excel/'
 METADATA_FILE_PATH='./EXCEL_METADATA.json'
+SRC_PATH='./.src/'
 
 def column_name_generator():
     # Generate ALPHABET_COL_NAME of lengths 1 to 5
@@ -140,7 +141,7 @@ if __name__ == '__main__':
                 newexcelpath=path.replace('.xlsx', '.xlsm')
                 print(f"{path} -> {newexcelpath}")
                 workbook = xlsxwriter.Workbook(newexcelpath)
-                workbook.add_vba_project('AutoParsing.bin')
+                workbook.add_vba_project(SRC_PATH+'AutoParsing.bin')
                 workbook.close()
                 excel_text_paths_to_gen.append(newexcelpath)
                 
