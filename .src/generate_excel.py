@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import json
 import openpyxl
+import py_git
 
 
 def construct_format_object(format_dict):
@@ -28,7 +29,15 @@ def construct_format_object(format_dict):
     return obj    
 
 
-def gather_data_files(sheet_path, styles_file):
+def get_changed_styles_rows(sheet_path):
+    # Run git status command
+    new_files, modified_files = py_git.get_changed_files(sheet_path)
+
+    modified_files.extend(new_files)
+    return [x for x in modified_files if x.endswith('/styles.json')]
+
+
+def gather_data_files(sheet_path, change_style_files):
     sheet_values=pd.DataFrame()
     rows_format={}
     for item in os.listdir(sheet_path):
@@ -42,7 +51,7 @@ def gather_data_files(sheet_path, styles_file):
             df=df.reset_index(drop=True).T
             sheet_values=pd.concat([sheet_values, df])
             
-            if 1==1 or item_path.strip('./')+'/styles.json' in styles_file:
+            if item_path.strip('./')+'/styles.json' in change_style_files:
                 with open(item_path+'/styles.json') as wf:
                     rows_format[record_order]=json.load(wf)
     
@@ -57,13 +66,14 @@ def gen_excel_from_text(excel_path, excel_text_path, ALPHABET_COL_NAME):
         sheet_path=excel_text_path+sheet_name+'/'
         sheet_values=pd.DataFrame()
         rows_format={}
-        # files=get_changed_styles_rows(sheet_path)        
-        # sheet_values, rows_format = gather_data_files(sheet_path, files)
-        sheet_values, rows_format = gather_data_files(sheet_path, [])
+        change_style_files=get_changed_styles_rows(sheet_path)  
+        print(f'Detect {sheet_path} have changed style row files {change_style_files}')      
+        sheet_values, rows_format = gather_data_files(sheet_path, change_style_files)
         sheet_values=sheet_values.rename(columns=dict(zip(list(sheet_values.columns), ALPHABET_COL_NAME[:len(list(sheet_values.columns))])))
-        # # #WRITE VALUES
-        # with pd.ExcelWriter(new_excel_path, mode="a", engine="openpyxl", if_sheet_exists='overlay') as writer:
-        #     sheet_values.to_excel(writer, sheet_name=sheet['SHEET_NAME'], index=None, header=None)
+        
+        # #WRITE VALUES
+        with pd.ExcelWriter(excel_path, mode="a", engine="openpyxl", if_sheet_exists='overlay') as writer:
+            sheet_values.to_excel(writer, sheet_name=sheet_name, index=None, header=None)
         
         #WRITE STYLES
         num_col=len(sheet_values.columns)
@@ -95,28 +105,12 @@ def gen_excel_from_text(excel_path, excel_text_path, ALPHABET_COL_NAME):
                     format_object=construct_format_object(sheet_style_collections[type][format_name])
                     destination_cell.__setattr__(type, format_object)
 
-        for irow in range(len(sheet_values)):
-            for abc_col_name in ALPHABET_COL_NAME[:num_col]:
-                destination_cell = destination_sheet[abc_col_name+str(irow+1)]
-                destination_cell.__setattr__('value', sheet_values.iloc[irow][abc_col_name])
+        # for irow in range(len(sheet_values)):
+        #     for abc_col_name in ALPHABET_COL_NAME[:num_col]:
+        #         destination_cell = destination_sheet[abc_col_name+str(irow+1)]
+        #         destination_cell.__setattr__('value', sheet_values.iloc[irow][abc_col_name])
 
         workbook.save(excel_path)
         workbook.close()
-
-
-# def get_changed_styles_rows(sheet_path):
-#     # Run git status command
-#     updated_files = subprocess.run(['git', 'diff', '--name-only', sheet_path], capture_output=True, text=True)
-#     new_files=subprocess.run(['git', 'ls-files', '--other','--exclude-standard', sheet_path], capture_output=True, text=True)
-    
-#     updated_files = updated_files.stdout.strip()
-#     new_files = new_files.stdout.strip()
-
-#     # Process the output to extract the changed files
-#     updated_files = updated_files.split('\n')
-#     new_files = new_files.split('\n')
-
-#     updated_files.extend(new_files)
-#     return [x for x in updated_files if x.startswith('data/') and x.endswith('/styles.json')]
 
 
