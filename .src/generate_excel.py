@@ -71,9 +71,9 @@ def gen_excel_from_text(excel_path, excel_text_path, ALPHABET_COL_NAME):
         sheet_values, rows_format = gather_data_files(sheet_path, change_style_files)
         sheet_values=sheet_values.rename(columns=dict(zip(list(sheet_values.columns), ALPHABET_COL_NAME[:len(list(sheet_values.columns))])))
         
-        # #WRITE VALUES
-        with pd.ExcelWriter(excel_path, mode="a", engine="openpyxl", if_sheet_exists='overlay') as writer:
-            sheet_values.to_excel(writer, sheet_name=sheet_name, index=None, header=None)
+        # # #WRITE VALUES -- this way will remove vba script
+        # with pd.ExcelWriter(excel_path, mode="a", engine="openpyxl", if_sheet_exists='overlay') as writer:
+        #     sheet_values.to_excel(writer, sheet_name=sheet_name, index=None, header=None)
         
         #WRITE STYLES
         num_col=len(sheet_values.columns)
@@ -105,10 +105,10 @@ def gen_excel_from_text(excel_path, excel_text_path, ALPHABET_COL_NAME):
                     format_object=construct_format_object(sheet_style_collections[type][format_name])
                     destination_cell.__setattr__(type, format_object)
 
-        # for irow in range(len(sheet_values)):
-        #     for abc_col_name in ALPHABET_COL_NAME[:num_col]:
-        #         destination_cell = destination_sheet[abc_col_name+str(irow+1)]
-        #         destination_cell.__setattr__('value', sheet_values.iloc[irow][abc_col_name])
+        for irow in range(len(sheet_values)):
+            for abc_col_name in ALPHABET_COL_NAME[:num_col]:
+                destination_cell = destination_sheet[abc_col_name+str(irow+1)]
+                destination_cell.__setattr__('value', sheet_values.iloc[irow][abc_col_name])
 
         workbook.save(excel_path)
         workbook.close()
