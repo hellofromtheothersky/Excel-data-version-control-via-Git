@@ -133,6 +133,9 @@ if __name__ == '__main__':
                 text_path=ALL_EXCEL_AS_TEXT_PATH+excel_name+'/'
                 print(f"{text_path} -> {path}")
                 generate_excel.gen_excel_from_text(path, text_path, ALPHABET_COL_NAME)
+
+        print('Checking status')
+        subprocess.run('git status', capture_output=False, )
     except Exception as error:
         traceback.print_exc()
         print(error)
