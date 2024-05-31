@@ -5,7 +5,8 @@
     "C": 19.7109375,
     "D": 17.85546875,
     "E": 20.5703125,
-    "F": 36.28515625
+    "F": 36.28515625,
+    "G": 16.85546875
   },
   "font": {
     "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor": {
@@ -14,23 +15,6 @@
         "name": "Calibri",
         "family": 2.0,
         "sz": 11.0,
-        "color": {
-          "objectType": "Color",
-          "measure": {
-            "type": "theme",
-            "theme": 1
-          }
-        },
-        "scheme": "minor"
-      }
-    },
-    "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  theme=1  scheme=minor": {
-      "objectType": "font",
-      "measure": {
-        "name": "Calibri",
-        "family": 2.0,
-        "sz": 11.0,
-        "b": true,
         "color": {
           "objectType": "Color",
           "measure": {
@@ -51,26 +35,6 @@
     }
   },
   "fill": {
-    "patternType=solid  type=theme  theme=9  type=indexed  indexed=64": {
-      "objectType": "fill",
-      "measure": {
-        "patternType": "solid",
-        "fgColor": {
-          "objectType": "Color",
-          "measure": {
-            "type": "theme",
-            "theme": 9
-          }
-        },
-        "bgColor": {
-          "objectType": "Color",
-          "measure": {
-            "type": "indexed",
-            "indexed": 64
-          }
-        }
-      }
-    },
     "rgb=00000000  type=rgb  rgb=00000000  type=rgb": {
       "objectType": "fill",
       "measure": {
@@ -90,16 +54,15 @@
         }
       }
     },
-    "patternType=solid  type=theme  theme=5  tint=0.3999755851924192  type=indexed  indexed=64": {
+    "patternType=solid  rgb=FFFFFF00  type=rgb  type=indexed  indexed=64": {
       "objectType": "fill",
       "measure": {
         "patternType": "solid",
         "fgColor": {
           "objectType": "Color",
           "measure": {
-            "type": "theme",
-            "theme": 5,
-            "tint": 0.3999755851924192
+            "rgb": "FFFFFF00",
+            "type": "rgb"
           }
         },
         "bgColor": {
