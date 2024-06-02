@@ -18,9 +18,8 @@ def get_changed_files(path):
     # Iterate through the lines and extract the file names
     for line in lines:
         line=line.strip()
-        print(line)
-        if line.startswith('A '):
-            new_files.append(re.findall(r'\w+\s+["]*(.+?)["]*$', line)[0])
+        if line.startswith('A ') or line.startswith('?? '):
+            new_files.append(re.findall(r'[\w?]+\s+["]*(.+?)["]*$', line)[0])
         elif line.startswith('M '):
             modified_files.append(re.findall(r'\w+\s+["]*(.+?)["]*$', line)[0])
     
