@@ -92,7 +92,6 @@ if __name__ == '__main__':
                 excel_paths_to_parse.append(excelpath)
                 excel_paths_to_add_auto_parsing.append(excelpath)
             else:
-                print('---')
                 text_path=ALL_EXCEL_AS_TEXT_PATH+get_filename_or_lastfoldername(excelpath)+'/'
                 new, upd = py_git.get_changed_files(text_path)
                 if new or upd:
@@ -101,7 +100,7 @@ if __name__ == '__main__':
         if excel_text_paths_to_gen or excel_paths_to_parse:
             with open('./excel_metadata.json', 'r') as rf:
                 CF=json.load(rf)
-
+        
         if excel_paths_to_parse and args.action!='to_excel':
             print('EXCEL -> TEXT')
             print('-------------')
@@ -115,7 +114,7 @@ if __name__ == '__main__':
 
                 parsing_excel.gen_excel_as_text(path, ALL_EXCEL_AS_TEXT_PATH+excel_name+'/', excel_cf, ALPHABET_COL_NAME)
                 if not args.action:
-                    subprocess.run('git add .', capture_output=False)
+                    subprocess.run('git add .', stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         if excel_paths_to_add_auto_parsing and not args.action:
             print('NORMAL EXCEL -> AUTO-PARSING EXCEL')
@@ -141,8 +140,8 @@ if __name__ == '__main__':
                 generate_excel.gen_excel_from_text(path, text_path, ALPHABET_COL_NAME)
 
         print('Checking status')
-        subprocess.run('git status', capture_output=False)
-        subprocess.run('git add .', capture_output=False)
+        subprocess.run('git status', stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run('git add .', stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     except Exception as error:
         traceback.print_exc()
         print('------')

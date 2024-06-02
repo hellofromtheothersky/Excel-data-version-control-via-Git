@@ -5,7 +5,6 @@ import openpyxl
 import shutil
 import time
 import re
-import traceback
 
 ALL_EXCEL_AS_TEXT_PATH='./excel_as_text/'
 ALL_EXCEL_PATH='./excel/'
@@ -39,50 +38,32 @@ def log_with_timer(msg):
     step_time=current_time
 
 
-def gen_excel_as_text(excel_path, text_path, excel_cf, ALPHABET_COL_NAME):
-    workbook = openpyxl.load_workbook(excel_path)
+class SheetExcelObject:
+    def __init__(self, sheet_openpyxl, excelpath: str, text_path: str, sheet_name: str, keys: list = None, header_line: int = None) -> None:
+        self.sheet_openpyxl=sheet_openpyxl
+        self.excelpath=excelpath
+        self.text_path=text_path
+        self.sheet_name=sheet_name
+        self.keys=keys
+        self.header_line=header_line
 
-    try:
-        shutil.rmtree(text_path)
-    except:
-        pass
-    
-    for sheet_name in workbook.sheetnames:
-        if sheet_name in excel_cf.keys():
-            sheet_properties=excel_cf[sheet_name]
-            try:
-                sheet_keys=sheet_properties['KEYS']
-            except:
-                sheet_keys=False
-
-            try:
-                sheet_header_line=sheet_properties['HEADER_LINE']
-            except:
-                sheet_header_line=False
-        else:
-            sheet_keys=False
-            sheet_header_line=False
-
-        #GET DATA
-        log_with_timer(f"{sheet_name}: reading data...")
+    def read_value(self):
         try:
-            df_values=pd.read_excel(excel_path, sheet_name=sheet_name, index_col=False, header=None)
+            df_values=pd.read_excel(self.excelpath, sheet_name=self.sheet_name, index_col=False, header=None)
         except ValueError:
-            print(f'Not found excel file [{sheet_name}] or sheet {sheet_name}')
+            print(f'Not found excel file [{self.sheet_name}] or sheet {self.sheet_name}')
             return None
-        df_values=df_values.rename(columns=dict(zip(list(df_values.columns), ALPHABET_COL_NAME[:len(list(df_values.columns))])))
+        self.len_active_col=len(list(df_values.columns))
+        self.len_active_row=len(df_values)
+        self.df_values=df_values.rename(columns=dict(zip(list(df_values.columns), ALPHABET_COL_NAME[:self.len_active_col])))
 
-
-        #GET LAYOUT
-        log_with_timer(f"{sheet_name}: reading style...")
-        sheet=workbook[sheet_name]
+    def read_style(self):
         layout_data = []
-        general_format={'width': {}, 'font':{}, 'border':{}, 'fill':{}, 'number_format': {}, 'protection':{}, 'alignment':{}}
-        for col_name in ALPHABET_COL_NAME[:len(list(df_values.columns))]:
-            general_format['width'][col_name] = sheet.column_dimensions[col_name].width
-        for row in sheet.iter_rows():
+        general_format={'width': {}, 'font':{}, 'border':{} , 'fill':{}, 'number_format': {}, 'protection':{}, 'alignment':{}}
+        for col_name in ALPHABET_COL_NAME[:self.len_active_col]:
+            general_format['width'][col_name] = self.sheet_openpyxl.column_dimensions[col_name].width
+        for row in self.sheet_openpyxl.iter_rows():
             row_layout_data = []
-            # start_time = time.time()  # Start the timer
             for cell in row:
                 cell_layout_data = {
                     'font': parsing_format(cell.font),
@@ -102,21 +83,23 @@ def gen_excel_as_text(excel_path, text_path, excel_cf, ALPHABET_COL_NAME):
 
                 row_layout_data.append(cell_layout_data)
             layout_data.append(row_layout_data)
-        
 
-        #WRITE TO READABLE FILES
-        log_with_timer(f"{sheet_name}: writing data...")
-        for i in range(len(df_values)):
+        self.layout_data=layout_data
+        self.general_format=general_format
+
+    def write_to_text(self):
+        for i in range(self.len_active_row):
             line=i+1
             record_title=""
-            if sheet_header_line and line == sheet_header_line:
+            rename_col=False
+            if self.header_line and line == self.header_line:
                 record_title='HEADER'
-            elif line > sheet_header_line:
-                if sheet_header_line:
-                    df_values=df_values.rename(columns=dict(zip(list(df_values.columns), df_values.iloc[sheet_header_line-1])))
-                    sheet_header_line=False
-                if sheet_keys:
-                    record_keys=dict(zip(sheet_keys, [df_values[key].iloc[i] for key in sheet_keys]))
+            elif self.header_line and line > self.header_line:
+                if self.header_line and rename_col==False:
+                    self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), self.df_values.iloc[self.header_line-1])))
+                    rename_col=False
+                if self.keys:
+                    record_keys=dict(zip(self.keys, [self.df_values[key].iloc[i] for key in self.keys]))
                     record_title=' & '.join([re.sub(r'\W+','', str(v)) for k, v in record_keys.items()])
 
             if len(record_title)>0:
@@ -124,21 +107,61 @@ def gen_excel_as_text(excel_path, text_path, excel_cf, ALPHABET_COL_NAME):
             else:
                 record_name=f'L{line}'
 
-            record_path=f"{text_path}{sheet_name}/{record_name}/"
+            record_path=f"{self.text_path}{self.sheet_name}/{record_name}/"
             record_data_path=f"{record_path}values.csv"   
             record_layout_path=f"{record_path}styles.json"
 
             os.makedirs(record_path)
-            df_values.iloc[i].T.to_csv(record_data_path)
+            self.df_values.iloc[i].T.to_csv(record_data_path)
             
             with open(record_layout_path, 'w') as wf:
-                json.dump(dict(zip(df_values.columns, layout_data[i])), wf, indent=2)
+                json.dump(dict(zip(self.df_values.columns, self.layout_data[i])), wf, indent=2)
         
         try:
-            with open(f"{text_path}{sheet_name}/styles_detail.json", 'w') as wf:
-                    json.dump(general_format, wf, indent=2)
+            with open(f"{self.text_path}{self.sheet_name}/styles_detail.json", 'w') as wf:
+                    json.dump(self.general_format, wf, indent=2)
         except FileNotFoundError:
             pass
+
+def gen_excel_as_text(excel_path, text_path, excel_cf, local_ALPHABET_COL_NAME):
+    global ALPHABET_COL_NAME
+    ALPHABET_COL_NAME = local_ALPHABET_COL_NAME
+    workbook = openpyxl.load_workbook(excel_path)
+
+    try:
+        shutil.rmtree(text_path)
+    except:
+        pass
+    
+    sheet_keys=None
+    sheet_header_line=None
+    for sheet_name in workbook.sheetnames:
+        try:
+            sheet_properties=excel_cf[sheet_name]
+            try:
+                sheet_keys=sheet_properties['KEYS']
+            except:
+                pass
+            try:
+                sheet_header_line=sheet_properties['HEADER_LINE']
+            except:
+                pass
+        except:
+            pass
+
+        sheet_obj=SheetExcelObject(workbook[sheet_name], excel_path, text_path, sheet_name, sheet_keys, sheet_header_line)
+        #GET DATA
+        log_with_timer(f"{sheet_name}: reading data...")
+        sheet_obj.read_value()
+
+        #GET LAYOUT
+        log_with_timer(f"{sheet_name}: reading style...")
+        sheet_obj.read_style()
+
+        #WRITE TO READABLE FILES
+        log_with_timer(f"{sheet_name}: writing data...")
+        sheet_obj.write_to_text()
+
 
     
     
