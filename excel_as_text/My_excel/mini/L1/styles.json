@@ -1,5 +1,5 @@
 {
-  "A": {
+  "idd": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
     "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
@@ -7,7 +7,7 @@
     "protection": "locked=True",
     "alignment": ""
   },
-  "B": {
+  "id": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
     "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
@@ -15,7 +15,7 @@
     "protection": "locked=True",
     "alignment": ""
   },
-  "C": {
+  "name": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
     "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",

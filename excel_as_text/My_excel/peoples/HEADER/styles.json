@@ -1,56 +1,48 @@
 {
-  "A": {
+  "id": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
-    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "fill": "patternType=solid  type=theme  theme=9  type=indexed  indexed=64",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
-  "B": {
+  "object_id": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
-    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "fill": "patternType=solid  type=theme  theme=9  type=indexed  indexed=64",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
-  "C": {
+  "first_name": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
-    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "fill": "patternType=solid  type=theme  theme=9  type=indexed  indexed=64",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
-  "D": {
+  "last_name": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
-    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "fill": "patternType=solid  type=theme  theme=9  type=indexed  indexed=64",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
-  "E": {
+  "birthplace": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
-    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "fill": "patternType=solid  type=theme  theme=9  type=indexed  indexed=64",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
-  "F": {
+  "affiliation_name": {
     "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
     "border": "outline=True",
-    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
-    "number_format": "General",
-    "protection": "locked=True",
-    "alignment": ""
-  },
-  "G": {
-    "font": "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
-    "border": "outline=True",
-    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "fill": "patternType=solid  type=theme  theme=9  type=indexed  indexed=64",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
