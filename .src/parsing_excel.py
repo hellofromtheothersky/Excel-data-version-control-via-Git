@@ -87,27 +87,35 @@ class SheetExcelObject:
         self.layout_data=layout_data
         self.general_format=general_format
 
+
+    def get_record_title(self):
+        row_title_list=[]
+        row_title_list=[f"L{i+1}" for i in range(0, self.header_line-1)]
+        if self.header_line>=1: 
+            row_title_list.append("HEADER")
+
+        if self.keys:
+            if self.header_line>=1: 
+                self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), self.df_values.iloc[self.header_line-1])))
+            key_df=self.df_values[self.keys][self.df_values.index>=self.header_line]
+            for key in self.keys:
+                key_df.loc[:, key] = key_df[key].astype('str')
+                key_df.loc[:, key] = key_df[key].replace(to_replace=r'\W+', value='', regex=True)
+            record_title_df=key_df[self.keys].agg(' & '.join, axis=1)
+            duplicate_mask = record_title_df.duplicated(keep=False)
+            record_title_df[duplicate_mask] = 'L'+(record_title_df[duplicate_mask].index+1).astype(str) +' '+ record_title_df[duplicate_mask]
+            row_title_list.extend(list(record_title_df))
+        else:
+            row_title_list.extend([f"L{i+1}" for i in range(self.header_line, self.len_active_row)])         
+        return row_title_list
+
+
     def write_to_text(self):
+        row_title_list=self.get_record_title()
         for i in range(self.len_active_row):
-            line=i+1
-            record_title=""
-            rename_col=False
-            if self.header_line and line == self.header_line:
-                record_title='HEADER'
-            elif self.header_line and line > self.header_line:
-                if self.header_line and rename_col==False:
-                    self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), self.df_values.iloc[self.header_line-1])))
-                    rename_col=False
-                if self.keys:
-                    record_keys=dict(zip(self.keys, [self.df_values[key].iloc[i] for key in self.keys]))
-                    record_title=' & '.join([re.sub(r'\W+','', str(v)) for k, v in record_keys.items()])
+            row_title=row_title_list[i]
 
-            if len(record_title)>0:
-                record_name=f'L{line}_ {record_title}'
-            else:
-                record_name=f'L{line}'
-
-            record_path=f"{self.text_path}{self.sheet_name}/{record_name}/"
+            record_path=f"{self.text_path}{self.sheet_name}/{row_title}/"
             record_data_path=f"{record_path}values.csv"   
             record_layout_path=f"{record_path}styles.json"
 
@@ -123,6 +131,7 @@ class SheetExcelObject:
         except FileNotFoundError:
             pass
 
+
 def gen_excel_as_text(excel_path, text_path, excel_cf, local_ALPHABET_COL_NAME):
     global ALPHABET_COL_NAME
     ALPHABET_COL_NAME = local_ALPHABET_COL_NAME
@@ -133,9 +142,9 @@ def gen_excel_as_text(excel_path, text_path, excel_cf, local_ALPHABET_COL_NAME):
     except:
         pass
     
-    sheet_keys=None
-    sheet_header_line=None
     for sheet_name in workbook.sheetnames:
+        sheet_keys=None
+        sheet_header_line=0
         try:
             sheet_properties=excel_cf[sheet_name]
             try:
