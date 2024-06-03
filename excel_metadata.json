@@ -11,13 +11,5 @@
             "KEYS": ["idd", "id"],
             "HEADER_LINE": 2
         }
-    },
-    "Hello":
-    {
-        "peoples":
-        {
-            "KEYS": ["last_name"],
-            "HEADER_LINE": 1
-        }
     }
 }
