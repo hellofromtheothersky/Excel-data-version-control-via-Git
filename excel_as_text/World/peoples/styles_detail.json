@@ -1,0 +1,104 @@
+{
+  "width": {
+    "A": 13.0,
+    "B": 10.5703125,
+    "C": 19.7109375,
+    "D": 17.85546875,
+    "E": 20.5703125,
+    "F": 36.28515625,
+    "G": 16.85546875
+  },
+  "font": {
+    "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1
+          }
+        },
+        "scheme": "minor"
+      }
+    }
+  },
+  "border": {
+    "outline=True": {
+      "objectType": "border",
+      "measure": {
+        "outline": true
+      }
+    }
+  },
+  "fill": {
+    "rgb=00000000  type=rgb  rgb=00000000  type=rgb": {
+      "objectType": "fill",
+      "measure": {
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        }
+      }
+    },
+    "patternType=solid  rgb=FFFFFF00  type=rgb  type=indexed  indexed=64": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFFFF00",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "indexed",
+            "indexed": 64
+          }
+        }
+      }
+    }
+  },
+  "number_format": {
+    "General": {
+      "objectType": "number_format",
+      "measure": "General"
+    }
+  },
+  "protection": {
+    "locked=True": {
+      "objectType": "protection",
+      "measure": {
+        "locked": true
+      }
+    }
+  },
+  "alignment": {
+    "": {
+      "objectType": "alignment",
+      "measure": {}
+    },
+    "wrapText=True": {
+      "objectType": "alignment",
+      "measure": {
+        "wrapText": true
+      }
+    }
+  }
+}
