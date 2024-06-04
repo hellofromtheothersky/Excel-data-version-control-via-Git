@@ -1,0 +1,80 @@
+{
+  "width": {
+    "A": 30.33203125,
+    "B": 39.33203125,
+    "C": 76.6640625
+  },
+  "font": {
+    "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1
+          }
+        },
+        "scheme": "minor"
+      }
+    }
+  },
+  "border": {
+    "outline=True": {
+      "objectType": "border",
+      "measure": {
+        "outline": true
+      }
+    }
+  },
+  "fill": {
+    "rgb=00000000  type=rgb  rgb=00000000  type=rgb": {
+      "objectType": "fill",
+      "measure": {
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        }
+      }
+    }
+  },
+  "number_format": {
+    "General": {
+      "objectType": "number_format",
+      "measure": "General"
+    }
+  },
+  "protection": {
+    "locked=True": {
+      "objectType": "protection",
+      "measure": {
+        "locked": true
+      }
+    }
+  },
+  "alignment": {
+    "": {
+      "objectType": "alignment",
+      "measure": {}
+    },
+    "wrapText=True": {
+      "objectType": "alignment",
+      "measure": {
+        "wrapText": true
+      }
+    }
+  }
+}

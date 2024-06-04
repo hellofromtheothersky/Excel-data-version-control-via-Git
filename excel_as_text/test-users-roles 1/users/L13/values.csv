@@ -1,0 +1,8 @@
+,12
+A,test-1
+B,SQL_USER
+C,dbo
+D,DATABASE
+E,
+F," -ODS Integration logic (FILES and DATABASE)
+ - DIL provides this account for use in case 2: 'DB import',  Board will connect directory to database, insert data to landing table and register"

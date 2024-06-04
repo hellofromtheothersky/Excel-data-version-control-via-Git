@@ -1,0 +1,381 @@
+{
+  "width": {
+    "A": 35.6640625,
+    "B": 26.33203125,
+    "C": 24.88671875,
+    "D": 20.0,
+    "E": 13.0,
+    "F": 105.0
+  },
+  "font": {
+    "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1
+          }
+        },
+        "scheme": "minor"
+      }
+    },
+    "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme"
+          }
+        },
+        "scheme": "minor"
+      }
+    },
+    "name=Calibri  family=2.0  sz=11.0  rgb=FFFF0000  type=rgb  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFF0000",
+            "type": "rgb"
+          }
+        },
+        "scheme": "minor"
+      }
+    }
+  },
+  "border": {
+    "outline=True": {
+      "objectType": "border",
+      "measure": {
+        "outline": true
+      }
+    },
+    "style=thin  type=theme  style=thick  type=theme  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thin  type=theme  style=thin  type=theme  style=thick  type=theme  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "left": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thin  type=theme  theme=4  tint=0.3999755851924192  style=thin  type=theme  theme=4  tint=0.3999755851924192  style=thin  type=theme  theme=4  tint=0.3999755851924192  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 4,
+                "tint": 0.3999755851924192
+              }
+            }
+          }
+        },
+        "top": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 4,
+                "tint": 0.3999755851924192
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 4,
+                "tint": 0.3999755851924192
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    }
+  },
+  "fill": {
+    "rgb=00000000  type=rgb  rgb=00000000  type=rgb": {
+      "objectType": "fill",
+      "measure": {
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        }
+      }
+    },
+    "patternType=solid  type=theme  theme=4  type=theme  theme=4": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 4
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 4
+          }
+        }
+      }
+    },
+    "patternType=solid  rgb=FFFFFF00  type=rgb  type=theme  theme=4  tint=0.7999816888943144": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFFFF00",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 4,
+            "tint": 0.7999816888943144
+          }
+        }
+      }
+    },
+    "patternType=solid  type=theme  theme=9  tint=0.7999816888943144  type=theme  theme=4  tint=0.7999816888943144": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 9,
+            "tint": 0.7999816888943144
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 4,
+            "tint": 0.7999816888943144
+          }
+        }
+      }
+    },
+    "patternType=solid  rgb=FFFFFF00  type=rgb  type=indexed  indexed=64": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFFFF00",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "indexed",
+            "indexed": 64
+          }
+        }
+      }
+    },
+    "patternType=solid  type=theme  theme=9  tint=0.7999816888943144  type=indexed  indexed=64": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 9,
+            "tint": 0.7999816888943144
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "indexed",
+            "indexed": 64
+          }
+        }
+      }
+    },
+    "patternType=solid  type=theme  theme=4  tint=0.7999816888943144  type=theme  theme=4  tint=0.7999816888943144": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 4,
+            "tint": 0.7999816888943144
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 4,
+            "tint": 0.7999816888943144
+          }
+        }
+      }
+    },
+    "patternType=solid  rgb=FFFF0000  type=rgb  type=indexed  indexed=64": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFF0000",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "indexed",
+            "indexed": 64
+          }
+        }
+      }
+    }
+  },
+  "number_format": {
+    "General": {
+      "objectType": "number_format",
+      "measure": "General"
+    }
+  },
+  "protection": {
+    "locked=True": {
+      "objectType": "protection",
+      "measure": {
+        "locked": true
+      }
+    }
+  },
+  "alignment": {
+    "": {
+      "objectType": "alignment",
+      "measure": {}
+    },
+    "wrapText=True": {
+      "objectType": "alignment",
+      "measure": {
+        "wrapText": true
+      }
+    }
+  }
+}

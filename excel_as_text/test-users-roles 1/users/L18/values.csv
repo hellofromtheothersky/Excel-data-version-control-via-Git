@@ -1,0 +1,8 @@
+,17
+A,test-1
+B,EXTERNAL_USER
+C,dbo
+D,EXTERNAL
+E,
+F,"Using for connect from ADF pipeline to DIL db
+ +"

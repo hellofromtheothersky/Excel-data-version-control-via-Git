@@ -1,0 +1,9 @@
+,7
+A,test-1
+B,EXTERNAL_USER
+C,dbo
+D,EXTERNAL
+E,
+F," - Information:  rtf-converter , --Type: Enterprise application , Azure function 
+ - Using for convert  RTF to eHTML , eTXT.
+ - Called from ADF Pipeline -> connect and read/insert data to  DB"

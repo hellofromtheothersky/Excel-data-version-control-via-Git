@@ -1,0 +1,9 @@
+,11
+A,test-1
+B,EXTERNAL_USER
+C,dbo
+D,EXTERNAL
+E,
+F," - Information:   --Type : Enterprise application, Azure function
+ - Using for import data to landing tables via API ( Azure function app ) and register 
+"

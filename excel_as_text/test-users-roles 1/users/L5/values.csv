@@ -1,0 +1,7 @@
+,4
+A,test-1
+B,SQL_USER
+C,dbo
+D,DATABASE
+E,
+F, - DIL provides this account for Board connect and read/get data from DIL db views

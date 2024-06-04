@@ -1,0 +1,8 @@
+,13
+A,test-1
+B,EXTERNAL_USER
+C,dbo
+D,EXTERNAL
+E,
+F," -Information:
+ - Using to access  serving views via db access and show data on BI report site"
