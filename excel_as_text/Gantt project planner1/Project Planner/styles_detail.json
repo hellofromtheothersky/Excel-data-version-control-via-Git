@@ -1,0 +1,719 @@
+{
+  "width": {
+    "A": 2.6640625,
+    "B": 15.6640625,
+    "C": 11.6640625,
+    "D": 13.0,
+    "E": 13.0,
+    "F": 13.0,
+    "G": 21.5546875,
+    "H": 2.77734375,
+    "I": 13.0,
+    "J": 13.0,
+    "K": 13.0,
+    "L": 13.0,
+    "M": 13.0,
+    "N": 13.0,
+    "O": 13.0,
+    "P": 13.0,
+    "Q": 13.0,
+    "R": 13.0,
+    "S": 13.0,
+    "T": 13.0,
+    "U": 13.0,
+    "V": 13.0,
+    "W": 13.0,
+    "X": 13.0,
+    "Y": 13.0,
+    "Z": 13.0,
+    "AA": 13.0,
+    "AB": 13.0,
+    "AC": 13.0,
+    "AD": 13.0,
+    "AE": 13.0,
+    "AF": 13.0,
+    "AG": 13.0,
+    "AH": 13.0,
+    "AI": 13.0,
+    "AJ": 13.0,
+    "AK": 13.0,
+    "AL": 13.0,
+    "AM": 13.0,
+    "AN": 13.0,
+    "AO": 13.0,
+    "AP": 13.0,
+    "AQ": 13.0,
+    "AR": 13.0,
+    "AS": 13.0,
+    "AT": 13.0,
+    "AU": 13.0,
+    "AV": 13.0,
+    "AW": 13.0,
+    "AX": 13.0,
+    "AY": 13.0,
+    "AZ": 13.0,
+    "BA": 13.0,
+    "BB": 13.0,
+    "BC": 13.0,
+    "BD": 13.0,
+    "BE": 13.0,
+    "BF": 13.0,
+    "BG": 13.0,
+    "BH": 13.0,
+    "BI": 13.0,
+    "BJ": 13.0,
+    "BK": 13.0,
+    "BL": 13.0,
+    "BM": 13.0,
+    "BN": 13.0,
+    "BO": 13.0
+  },
+  "font": {
+    "name=Corbel  family=2.0  sz=11.0  type=theme  theme=1  tint=0.249946592608417  scheme=major": {
+      "objectType": "font",
+      "measure": {
+        "name": "Corbel",
+        "family": 2.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1,
+            "tint": 0.249946592608417
+          }
+        },
+        "scheme": "major"
+      }
+    },
+    "name=Corbel  family=2.0  sz=42.0  b=True  type=theme  theme=7  scheme=major": {
+      "objectType": "font",
+      "measure": {
+        "name": "Corbel",
+        "family": 2.0,
+        "sz": 42.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7
+          }
+        },
+        "scheme": "major"
+      }
+    },
+    "name=Calibri  family=2.0  sz=11.0  i=True  type=theme  theme=7  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "i": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7
+          }
+        },
+        "scheme": "minor"
+      }
+    },
+    "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  theme=1  tint=0.249946592608417  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1,
+            "tint": 0.249946592608417
+          }
+        },
+        "scheme": "minor"
+      }
+    },
+    "name=Corbel  family=2.0  sz=12.0  type=theme  theme=1  tint=0.249946592608417  scheme=major": {
+      "objectType": "font",
+      "measure": {
+        "name": "Corbel",
+        "family": 2.0,
+        "sz": 12.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1,
+            "tint": 0.249946592608417
+          }
+        },
+        "scheme": "major"
+      }
+    },
+    "name=Calibri  family=2.0  sz=12.0  type=theme  theme=1  tint=0.249946592608417": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 12.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1,
+            "tint": 0.249946592608417
+          }
+        }
+      }
+    },
+    "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  theme=1  tint=0.3499862666707358  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "family": 2.0,
+        "sz": 11.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1,
+            "tint": 0.3499862666707358
+          }
+        },
+        "scheme": "minor"
+      }
+    },
+    "name=Calibri  sz=13.0  b=True  type=theme  theme=1  tint=0.249946592608417": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "sz": 13.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1,
+            "tint": 0.249946592608417
+          }
+        }
+      }
+    },
+    "name=Calibri  sz=12.0  type=theme  theme=1  tint=0.249946592608417": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "sz": 12.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 1,
+            "tint": 0.249946592608417
+          }
+        }
+      }
+    },
+    "name=Calibri  sz=13.0  b=True  type=theme  theme=7": {
+      "objectType": "font",
+      "measure": {
+        "name": "Calibri",
+        "sz": 13.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7
+          }
+        }
+      }
+    }
+  },
+  "border": {
+    "outline=True": {
+      "objectType": "border",
+      "measure": {
+        "outline": true
+      }
+    },
+    "style=thin  type=theme  theme=9  tint=-0.249946592608417  style=thin  type=theme  theme=9  tint=-0.249946592608417  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "top": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 9,
+                "tint": -0.249946592608417
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 9,
+                "tint": -0.249946592608417
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thick  type=theme  style=thick  type=theme  style=thin  type=theme  style=thick  type=theme  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "left": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "top": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thick  type=theme  style=thick  type=theme  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "left": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thick  type=theme  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thick  type=theme  style=thick  type=theme  style=thick  type=theme  style=thick  type=theme  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "left": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "right": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "top": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thick",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme"
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thin  type=theme  theme=7  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 7
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    },
+    "style=thin  type=theme  theme=9  tint=-0.249946592608417  style=thin  type=theme  theme=7  outline=True": {
+      "objectType": "border",
+      "measure": {
+        "top": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 9,
+                "tint": -0.249946592608417
+              }
+            }
+          }
+        },
+        "bottom": {
+          "objectType": "Side",
+          "measure": {
+            "style": "thin",
+            "color": {
+              "objectType": "Color",
+              "measure": {
+                "type": "theme",
+                "theme": 7
+              }
+            }
+          }
+        },
+        "outline": true
+      }
+    }
+  },
+  "fill": {
+    "rgb=00000000  type=rgb  rgb=00000000  type=rgb": {
+      "objectType": "fill",
+      "measure": {
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        }
+      }
+    },
+    "patternType=solid  type=theme  theme=9  tint=0.5999633777886288  type=indexed  indexed=64": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 9,
+            "tint": 0.5999633777886288
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "indexed",
+            "indexed": 64
+          }
+        }
+      }
+    },
+    "patternType=lightUp  type=theme  theme=7  rgb=00000000  type=rgb": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "lightUp",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        }
+      }
+    },
+    "patternType=lightUp  type=theme  theme=7  type=theme  theme=7  tint=0.5999633777886288": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "lightUp",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7,
+            "tint": 0.5999633777886288
+          }
+        }
+      }
+    },
+    "patternType=solid  type=theme  theme=7  type=auto  auto=True": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "auto",
+            "auto": true
+          }
+        }
+      }
+    },
+    "patternType=lightUp  type=theme  theme=7  type=theme  theme=9  tint=0.5999633777886288": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "lightUp",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 7
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 9,
+            "tint": 0.5999633777886288
+          }
+        }
+      }
+    },
+    "patternType=solid  type=theme  theme=9  type=indexed  indexed=64": {
+      "objectType": "fill",
+      "measure": {
+        "patternType": "solid",
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 9
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "type": "indexed",
+            "indexed": 64
+          }
+        }
+      }
+    }
+  },
+  "number_format": {
+    "General": {
+      "objectType": "number_format",
+      "measure": "General"
+    },
+    "0": {
+      "objectType": "number_format",
+      "measure": "0"
+    },
+    "#,##0": {
+      "objectType": "number_format",
+      "measure": "#,##0"
+    },
+    "0%": {
+      "objectType": "number_format",
+      "measure": "0%"
+    }
+  },
+  "protection": {
+    "locked=True": {
+      "objectType": "protection",
+      "measure": {
+        "locked": true
+      }
+    }
+  },
+  "alignment": {
+    "": {
+      "objectType": "alignment",
+      "measure": {}
+    },
+    "vertical=center": {
+      "objectType": "alignment",
+      "measure": {
+        "vertical": "center"
+      }
+    },
+    "horizontal=center": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "center"
+      }
+    },
+    "horizontal=left  vertical=center": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "left",
+        "vertical": "center"
+      }
+    },
+    "horizontal=center  vertical=center": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "center",
+        "vertical": "center"
+      }
+    },
+    "horizontal=center  vertical=center  wrapText=True": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "center",
+        "vertical": "center",
+        "wrapText": true
+      }
+    },
+    "horizontal=left": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "left"
+      }
+    },
+    "horizontal=center  wrapText=True": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "center",
+        "wrapText": true
+      }
+    },
+    "horizontal=left  wrapText=True": {
+      "objectType": "alignment",
+      "measure": {
+        "horizontal": "left",
+        "wrapText": true
+      }
+    }
+  }
+}
