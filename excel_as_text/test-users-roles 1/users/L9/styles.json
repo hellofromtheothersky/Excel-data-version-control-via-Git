@@ -8,7 +8,7 @@
     "alignment": ""
   },
   "B": {
-    "font": "name=Calibri  family=2.0  sz=11.0  rgb=FFFF0000  type=rgb  scheme=minor",
+    "font": "name=Times New Roman  family=1.0  sz=24.0  rgb=FFFF0000  type=rgb",
     "border": "outline=True",
     "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
     "number_format": "General",

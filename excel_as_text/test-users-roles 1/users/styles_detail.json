@@ -24,7 +24,7 @@
         "scheme": "minor"
       }
     },
-    "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  scheme=minor": {
+    "name=Calibri  family=2.0  sz=11.0  b=True  rgb=FF000000  type=rgb  scheme=minor": {
       "objectType": "font",
       "measure": {
         "name": "Calibri",
@@ -34,10 +34,26 @@
         "color": {
           "objectType": "Color",
           "measure": {
-            "type": "theme"
+            "rgb": "FF000000",
+            "type": "rgb"
           }
         },
         "scheme": "minor"
+      }
+    },
+    "name=Times New Roman  family=1.0  sz=24.0  rgb=FFFF0000  type=rgb": {
+      "objectType": "font",
+      "measure": {
+        "name": "Times New Roman",
+        "family": 1.0,
+        "sz": 24.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFF0000",
+            "type": "rgb"
+          }
+        }
       }
     },
     "name=Calibri  family=2.0  sz=11.0  rgb=FFFF0000  type=rgb  scheme=minor": {
@@ -64,7 +80,7 @@
         "outline": true
       }
     },
-    "style=thin  type=theme  style=thick  type=theme  outline=True": {
+    "style=thin  rgb=FF000000  type=rgb  style=thick  rgb=FF000000  type=rgb  outline=True": {
       "objectType": "border",
       "measure": {
         "right": {
@@ -74,7 +90,8 @@
             "color": {
               "objectType": "Color",
               "measure": {
-                "type": "theme"
+                "rgb": "FF000000",
+                "type": "rgb"
               }
             }
           }
@@ -86,7 +103,8 @@
             "color": {
               "objectType": "Color",
               "measure": {
-                "type": "theme"
+                "rgb": "FF000000",
+                "type": "rgb"
               }
             }
           }
@@ -94,7 +112,7 @@
         "outline": true
       }
     },
-    "style=thin  type=theme  style=thin  type=theme  style=thick  type=theme  outline=True": {
+    "style=thin  rgb=FF000000  type=rgb  style=thin  rgb=FF000000  type=rgb  style=thick  rgb=FF000000  type=rgb  outline=True": {
       "objectType": "border",
       "measure": {
         "left": {
@@ -104,7 +122,8 @@
             "color": {
               "objectType": "Color",
               "measure": {
-                "type": "theme"
+                "rgb": "FF000000",
+                "type": "rgb"
               }
             }
           }
@@ -116,7 +135,8 @@
             "color": {
               "objectType": "Color",
               "measure": {
-                "type": "theme"
+                "rgb": "FF000000",
+                "type": "rgb"
               }
             }
           }
@@ -128,7 +148,8 @@
             "color": {
               "objectType": "Color",
               "measure": {
-                "type": "theme"
+                "rgb": "FF000000",
+                "type": "rgb"
               }
             }
           }

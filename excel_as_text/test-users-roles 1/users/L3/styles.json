@@ -1,31 +1,31 @@
 {
   "A": {
-    "font": "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  scheme=minor",
-    "border": "style=thin  type=theme  style=thick  type=theme  outline=True",
+    "font": "name=Calibri  family=2.0  sz=11.0  b=True  rgb=FF000000  type=rgb  scheme=minor",
+    "border": "style=thin  rgb=FF000000  type=rgb  style=thick  rgb=FF000000  type=rgb  outline=True",
     "fill": "patternType=solid  type=theme  theme=4  type=theme  theme=4",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
   "B": {
-    "font": "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  scheme=minor",
-    "border": "style=thin  type=theme  style=thin  type=theme  style=thick  type=theme  outline=True",
+    "font": "name=Calibri  family=2.0  sz=11.0  b=True  rgb=FF000000  type=rgb  scheme=minor",
+    "border": "style=thin  rgb=FF000000  type=rgb  style=thin  rgb=FF000000  type=rgb  style=thick  rgb=FF000000  type=rgb  outline=True",
     "fill": "patternType=solid  type=theme  theme=4  type=theme  theme=4",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
   "C": {
-    "font": "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  scheme=minor",
-    "border": "style=thin  type=theme  style=thin  type=theme  style=thick  type=theme  outline=True",
+    "font": "name=Calibri  family=2.0  sz=11.0  b=True  rgb=FF000000  type=rgb  scheme=minor",
+    "border": "style=thin  rgb=FF000000  type=rgb  style=thin  rgb=FF000000  type=rgb  style=thick  rgb=FF000000  type=rgb  outline=True",
     "fill": "patternType=solid  type=theme  theme=4  type=theme  theme=4",
     "number_format": "General",
     "protection": "locked=True",
     "alignment": ""
   },
   "D": {
-    "font": "name=Calibri  family=2.0  sz=11.0  b=True  type=theme  scheme=minor",
-    "border": "style=thin  type=theme  style=thin  type=theme  style=thick  type=theme  outline=True",
+    "font": "name=Calibri  family=2.0  sz=11.0  b=True  rgb=FF000000  type=rgb  scheme=minor",
+    "border": "style=thin  rgb=FF000000  type=rgb  style=thin  rgb=FF000000  type=rgb  style=thick  rgb=FF000000  type=rgb  outline=True",
     "fill": "patternType=solid  type=theme  theme=4  type=theme  theme=4",
     "number_format": "General",
     "protection": "locked=True",
