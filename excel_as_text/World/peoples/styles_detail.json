@@ -1,12 +1,12 @@
 {
   "width": {
     "A": 13.0,
-    "B": 10.5703125,
-    "C": 19.7109375,
-    "D": 17.85546875,
-    "E": 20.5703125,
-    "F": 36.28515625,
-    "G": 16.85546875
+    "B": 10.5546875,
+    "C": 19.6640625,
+    "D": 17.88671875,
+    "E": 20.5546875,
+    "F": 36.33203125,
+    "G": 16.88671875
   },
   "font": {
     "name=Calibri  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor": {
@@ -23,6 +23,24 @@
           }
         },
         "scheme": "minor"
+      }
+    },
+    "name=Times New Roman  family=1.0  sz=11.0  b=True  i=True  u=single  rgb=FFFF0000  type=rgb": {
+      "objectType": "font",
+      "measure": {
+        "name": "Times New Roman",
+        "family": 1.0,
+        "sz": 11.0,
+        "b": true,
+        "i": true,
+        "u": "single",
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "FFFF0000",
+            "type": "rgb"
+          }
+        }
       }
     }
   },
