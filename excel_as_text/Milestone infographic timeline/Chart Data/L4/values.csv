@@ -1,0 +1,8 @@
+,3
+A,"Enter a milestone dates in cells B4 through B8. 
+Enter milestone title in cells C4 through C8.
+Enter milestone description or activity in cells D4 through D8.
+This is the last instruction in this worksheet."
+B,2024-06-04 00:00:00
+C,Set Benchmarks
+D,Enter the description that describes what needs to be done during this phase. It can be an elaborate desciption of text or a list of activities.

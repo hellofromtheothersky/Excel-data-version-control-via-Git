@@ -1,0 +1,34 @@
+{
+  "A": {
+    "font": "name=Franklin Gothic Book  family=2.0  sz=11.0  type=theme  theme=1  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": ";;;",
+    "protection": "locked=True",
+    "alignment": "vertical=center"
+  },
+  "B": {
+    "font": "name=Franklin Gothic Medium  family=2.0  sz=14.0  b=True  type=theme  theme=3  scheme=major",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  },
+  "C": {
+    "font": "name=Franklin Gothic Book  family=2.0  sz=11.0  type=theme  theme=3  tint=-0.499984740745262  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  },
+  "D": {
+    "font": "name=Franklin Gothic Book  family=2.0  sz=11.0  type=theme  theme=3  tint=-0.499984740745262  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  }
+}

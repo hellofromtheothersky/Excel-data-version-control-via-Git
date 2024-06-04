@@ -1,0 +1,120 @@
+{
+  "width": {
+    "A": 78.77734375
+  },
+  "font": {
+    "name=Franklin Gothic Medium  family=2.0  sz=14.0  b=True  type=theme  theme=3  scheme=major": {
+      "objectType": "font",
+      "measure": {
+        "name": "Franklin Gothic Medium",
+        "family": 2.0,
+        "sz": 14.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 3
+          }
+        },
+        "scheme": "major"
+      }
+    },
+    "name=Franklin Gothic Book  family=2.0  sz=13.0  b=True  type=theme  theme=3  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Franklin Gothic Book",
+        "family": 2.0,
+        "sz": 13.0,
+        "b": true,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 3
+          }
+        },
+        "scheme": "minor"
+      }
+    },
+    "name=Franklin Gothic Book  family=2.0  sz=11.0  type=theme  theme=3  tint=-0.499984740745262  scheme=minor": {
+      "objectType": "font",
+      "measure": {
+        "name": "Franklin Gothic Book",
+        "family": 2.0,
+        "sz": 11.0,
+        "color": {
+          "objectType": "Color",
+          "measure": {
+            "type": "theme",
+            "theme": 3,
+            "tint": -0.499984740745262
+          }
+        },
+        "scheme": "minor"
+      }
+    }
+  },
+  "border": {
+    "outline=True": {
+      "objectType": "border",
+      "measure": {
+        "outline": true
+      }
+    }
+  },
+  "fill": {
+    "rgb=00000000  type=rgb  rgb=00000000  type=rgb": {
+      "objectType": "fill",
+      "measure": {
+        "fgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        },
+        "bgColor": {
+          "objectType": "Color",
+          "measure": {
+            "rgb": "00000000",
+            "type": "rgb"
+          }
+        }
+      }
+    }
+  },
+  "number_format": {
+    "General": {
+      "objectType": "number_format",
+      "measure": "General"
+    }
+  },
+  "protection": {
+    "locked=True": {
+      "objectType": "protection",
+      "measure": {
+        "locked": true
+      }
+    }
+  },
+  "alignment": {
+    "vertical=center": {
+      "objectType": "alignment",
+      "measure": {
+        "vertical": "center"
+      }
+    },
+    "": {
+      "objectType": "alignment",
+      "measure": {}
+    },
+    "vertical=center  wrapText=True": {
+      "objectType": "alignment",
+      "measure": {
+        "vertical": "center",
+        "wrapText": true
+      }
+    }
+  }
+}

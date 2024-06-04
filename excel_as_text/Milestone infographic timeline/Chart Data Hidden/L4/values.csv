@@ -1,0 +1,6 @@
+,3
+A,The year in cell D4 represents the middle position year of the timeline.
+B,4 Jul
+C,
+D,2024
+E,"<-- year for the middle period of the roadmap, note, this may be blank if it's the same year as the starting position of the roadmap"

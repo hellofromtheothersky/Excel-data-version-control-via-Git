@@ -1,0 +1,10 @@
+{
+  "A": {
+    "font": "name=Franklin Gothic Book  family=2.0  sz=13.0  b=True  type=theme  theme=3  scheme=minor",
+    "border": "outline=True",
+    "fill": "rgb=00000000  type=rgb  rgb=00000000  type=rgb",
+    "number_format": "General",
+    "protection": "locked=True",
+    "alignment": ""
+  }
+}

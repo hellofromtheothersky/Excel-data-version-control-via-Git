@@ -1,0 +1,14 @@
+,2
+A,"There are 4 worksheets in this workbook. 
+
+Infographic Timeline
+Chart Data
+About
+Chart Data (hidden)
+
+The instructions for each worksheet are in the A column starting in cell A1 of each worksheet. They are written with hidden text. Each step guides you through the information in that row. Each subsequent step continues in cell A2, A3, and so on, unless otherwise explicitly directed. For example, instruction text might say ""continue to cell A6"" for the next step. 
+
+Hidden text will not print.
+
+To remove these instructions from any worksheet, simply delete column A.
+"
