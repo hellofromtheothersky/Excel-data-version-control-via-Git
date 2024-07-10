@@ -2,14 +2,8 @@ import pandas as pd
 import os
 import json
 import openpyxl
-import shutil
-import time
-import re
+from gitexcel import log
 
-ALL_EXCEL_AS_TEXT_PATH='./excel_as_text/'
-ALL_EXCEL_PATH='./excel/'
-METADATA_FILE_PATH='./EXCEL_METADATA.json'
-step_time=0
 
 def parsing_format(x):
     if hasattr(x, '__dict__'):
@@ -28,14 +22,6 @@ def parsing_format(x):
         return '  '.join(res_name), res
     else:
         return x, {'objectType': str(type(x).__name__), 'measure': x}
-    
-
-def log_with_timer(msg):
-    global step_time
-    current_time=time.time()
-    if step_time==0: step_time=current_time
-    print(f'(after {"{:.3f}".format(current_time-step_time)}) {msg}')
-    step_time=current_time
 
 
 class SheetExcelObject:
@@ -51,17 +37,18 @@ class SheetExcelObject:
         try:
             df_values=pd.read_excel(self.excelpath, sheet_name=self.sheet_name, index_col=False, header=None)
         except ValueError:
-            print(f'Not found excel file [{self.sheet_name}] or sheet {self.sheet_name}')
+            log.print_log_info(f'Not found excel file [{self.sheet_name}] or sheet {self.sheet_name}')
             return None
         self.len_active_col=len(list(df_values.columns))
         self.len_active_row=len(df_values)
-        self.df_values=df_values.rename(columns=dict(zip(list(df_values.columns), ALPHABET_COL_NAME[:self.len_active_col])))
+        self.df_values=df_values
+        self.rename_column('origin')
 
     def read_style(self):
         layout_data = []
         general_format={'width': {}, 'font':{}, 'border':{} , 'fill':{}, 'number_format': {}, 'protection':{}, 'alignment':{}}
         for col_name in ALPHABET_COL_NAME[:self.len_active_col]:
-            general_format['width'][col_name] = self.sheet_openpyxl.column_dimensions[col_name].width
+            general_format['width'][col_name] = int(self.sheet_openpyxl.column_dimensions[col_name].width)
         for row in self.sheet_openpyxl.iter_rows():
             row_layout_data = []
             for cell in row:
@@ -88,15 +75,21 @@ class SheetExcelObject:
         self.general_format=general_format
 
 
+    def rename_column(self, to):
+        if to=='origin':
+            self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), ALPHABET_COL_NAME[:self.len_active_col])))
+        elif to=='header':
+            self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), self.df_values.iloc[self.header_line-1])))
+
+
     def get_record_title(self):
         row_title_list=[]
         row_title_list=[f"L{i+1}" for i in range(0, self.header_line-1)]
         if self.header_line>=1: 
             row_title_list.append("HEADER")
+            self.rename_column('header')
 
         if self.keys:
-            if self.header_line>=1: 
-                self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), self.df_values.iloc[self.header_line-1])))
             key_df=self.df_values[self.keys][self.df_values.index>=self.header_line]
             for key in self.keys:
                 key_df.loc[:, key] = key_df[key].astype('str')
@@ -106,18 +99,22 @@ class SheetExcelObject:
             record_title_df[duplicate_mask] = 'L'+(record_title_df[duplicate_mask].index+1).astype(str) +' '+ record_title_df[duplicate_mask]
             row_title_list.extend(list(record_title_df))
         else:
-            row_title_list.extend([f"L{i+1}" for i in range(self.header_line, self.len_active_row)])         
+            row_title_list.extend([f"L{i+1}" for i in range(self.header_line, self.len_active_row)])     
+        self.rename_column('origin')    
         return row_title_list
 
 
     def write_to_text(self):
         row_title_list=self.get_record_title()
         for i in range(self.len_active_row):
+            if i+1==self.header_line+1:
+                self.rename_column('header')    
+
             row_title=row_title_list[i]
 
-            record_path=f"{self.text_path}{self.sheet_name}/{row_title}/"
-            record_data_path=f"{record_path}values.csv"   
-            record_layout_path=f"{record_path}styles.json"
+            record_path=f"{self.text_path}/{self.sheet_name}/{row_title}"
+            record_data_path=f"{record_path}/values.csv"   
+            record_layout_path=f"{record_path}/styles.json"
 
             os.makedirs(record_path)
             self.df_values.iloc[i].T.to_csv(record_data_path)
@@ -126,21 +123,18 @@ class SheetExcelObject:
                 json.dump(dict(zip(self.df_values.columns, self.layout_data[i])), wf, indent=2)
         
         try:
-            with open(f"{self.text_path}{self.sheet_name}/styles_detail.json", 'w') as wf:
+            with open(f"{self.text_path}/{self.sheet_name}/styles_detail.json", 'w') as wf:
                     json.dump(self.general_format, wf, indent=2)
         except FileNotFoundError:
             pass
 
 
 def gen_excel_as_text(excel_path, text_path, excel_cf, local_ALPHABET_COL_NAME):
+    log.print_log_info(excel_cf)
+    step_time=log.log_with_timer(f"Parse: {excel_path}")
     global ALPHABET_COL_NAME
     ALPHABET_COL_NAME = local_ALPHABET_COL_NAME
     workbook = openpyxl.load_workbook(excel_path)
-
-    try:
-        shutil.rmtree(text_path)
-    except:
-        pass
     
     for sheet_name in workbook.sheetnames:
         sheet_keys=None
@@ -160,16 +154,19 @@ def gen_excel_as_text(excel_path, text_path, excel_cf, local_ALPHABET_COL_NAME):
 
         sheet_obj=SheetExcelObject(workbook[sheet_name], excel_path, text_path, sheet_name, sheet_keys, sheet_header_line)
         #GET DATA
-        log_with_timer(f"{sheet_name}: reading data...")
+        step_time=log.log_with_timer(f"{sheet_name}: reading data...", step_time)
         sheet_obj.read_value()
 
         #GET LAYOUT
-        log_with_timer(f"{sheet_name}: reading style...")
+        step_time=log.log_with_timer(f"{sheet_name}: reading style...", step_time)
         sheet_obj.read_style()
 
         #WRITE TO READABLE FILES
-        log_with_timer(f"{sheet_name}: writing data...")
+        step_time=log.log_with_timer(f"{sheet_name}: writing data...", step_time)
         sheet_obj.write_to_text()
+
+        step_time=log.log_with_timer(f"{sheet_name}: Done!", step_time)
+
 
 
     

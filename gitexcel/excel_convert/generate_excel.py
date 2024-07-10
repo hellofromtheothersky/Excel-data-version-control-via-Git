@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import json
 import openpyxl
-import py_git
+from gitexcel import py_git, log
 
 
 def construct_format_object(format_dict):
@@ -31,7 +31,7 @@ def construct_format_object(format_dict):
 
 def get_changed_styles_rows(sheet_path):
     # Run git status command
-    new_files, modified_files = py_git.get_changed_files(sheet_path)
+    new_files, modified_files, _ = py_git.get_changed_files(sheet_path)
 
     modified_files.extend(new_files)
     return [x for x in modified_files if x.endswith('/styles.json')]
@@ -63,21 +63,17 @@ def gather_data_files(sheet_path, change_style_files):
 def gen_excel_from_text(excel_path, excel_text_path, ALPHABET_COL_NAME):
     first_sheet=True
     for sheet_name in [f for f in os.listdir(excel_text_path) if os.path.isdir(os.path.join(excel_text_path, f))]:
-        sheet_path=excel_text_path+sheet_name+'/'
+        sheet_path=excel_text_path+'/'+sheet_name
         sheet_values=pd.DataFrame()
         rows_format={}
         change_style_files=get_changed_styles_rows(sheet_path)  
-        print(f'Detect {sheet_path} have changed style row files {change_style_files}')      
+        log.print_log_info(f'Detect {sheet_path} have changed style row files {change_style_files}')      
         sheet_values, rows_format = gather_data_files(sheet_path, change_style_files)
         sheet_values=sheet_values.rename(columns=dict(zip(list(sheet_values.columns), ALPHABET_COL_NAME[:len(list(sheet_values.columns))])))
-        
-        # # #WRITE VALUES -- this way will remove vba script
-        # with pd.ExcelWriter(excel_path, mode="a", engine="openpyxl", if_sheet_exists='overlay') as writer:
-        #     sheet_values.to_excel(writer, sheet_name=sheet_name, index=None, header=None)
-        
+                
         #WRITE STYLES
         num_col=len(sheet_values.columns)
-        workbook = openpyxl.load_workbook(excel_path, keep_vba=True)
+        workbook = openpyxl.load_workbook(excel_path)
 
         try:
             destination_sheet = workbook[sheet_name]
@@ -91,7 +87,7 @@ def gen_excel_from_text(excel_path, excel_text_path, ALPHABET_COL_NAME):
                 destination_sheet = workbook[sheet_name]
 
 
-        with open(f"{excel_text_path}{sheet_name}/styles_detail.json", 'r') as rf:
+        with open(f"{excel_text_path}/{sheet_name}/styles_detail.json", 'r') as rf:
             sheet_style_collections=json.load(rf)
         
         for col, width in sheet_style_collections['width'].items():

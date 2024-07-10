@@ -18,7 +18,26 @@ And defitely, not only Excel is parsed into text, but also text can be parsed to
 
 ![image](https://github.com/hellofromtheothersky/Excel-data-version-control-via-Git/assets/84280247/9d22e693-4351-46b2-aaf1-d44059f80f4a)
 
+![image](https://github.com/Tiny4duck/Excel-data-version-control-via-Git/assets/84280247/30d62d70-e6ba-47ab-ae07-26d4a71abb0e)
+
+
 ## Setup process: 
+
+- pip install gitexcel
+- Activity diagrame of change events of file is below:
+  
+![image](https://github.com/Tiny4duck/Excel-data-version-control-via-Git/assets/84280247/3173328b-2eb3-47a0-966e-7ad9aa9f568c)
+
+![image](https://github.com/Tiny4duck/Excel-data-version-control-via-Git/assets/84280247/40f3dd0e-bdb7-4785-ac9e-ecdc27bbdab9)
+
+![image](https://github.com/Tiny4duck/Excel-data-version-control-via-Git/assets/84280247/dc144923-abbc-44c5-868f-b8711426baf2)
+
+
+
+
+
+
+
 
 
 

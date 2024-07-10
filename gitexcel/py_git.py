@@ -2,7 +2,7 @@ import subprocess
 import re
 
 
-def get_changed_files(path):
+def get_changed_files(path: str) -> tuple[list, list]:
     output = subprocess.check_output(['git', 'status', '--porcelain', path])
 
     # Decode the output from bytes to string
@@ -14,6 +14,7 @@ def get_changed_files(path):
     # Initialize empty lists to store the file names
     new_files = []
     modified_files = []
+    removed_files = []
 
     # Iterate through the lines and extract the file names
     for line in lines:
@@ -22,5 +23,7 @@ def get_changed_files(path):
             new_files.append(re.findall(r'[\w?]+\s+["]*(.+?)["]*$', line)[0])
         elif line.startswith('M'):
             modified_files.append(re.findall(r'\w+\s+["]*(.+?)["]*$', line)[0])
+        elif line.startswith('D'):
+            removed_files.append(re.findall(r'\w+\s+["]*(.+?)["]*$', line)[0])
     
-    return new_files, modified_files
+    return new_files, modified_files, removed_files
