@@ -1,5 +1,67 @@
 # Excel-data-version-control-via-Git
+GitExcel
 A tool for spreadsheet version control in Excel, created by Python and using with Git
+# Getting Started
+- `Python` and `Git` installed
+- Installing package via CMD:
+`pip install gitexcel`
+## Quickstart
+- Create a new project/repository:
+
+`gitexcel init --path <PATH TO PROJECT NAME>`
+
+- Or Clone an existing GitExcel repository:
+
+`gitexcel clone --path <PATH TO PROJECT NAME> --url <URL of REPO>`
+
+- Here is the project structure
+
+      . Project Name
+      ├── EXCEL/
+      │   ├── (Store all *.xlsx here, subfolder accepted)
+      ├── EXCEL_TEXT/
+      │   ├── (Excel data will be parsing into text here, including values and styles)
+      ├── EXCEL_METADATA.json/
+      │   (mannually setup header line and keys in Excel sheets)
+      ├── CHANGES.log/
+      │   Changes summary of Excel when before running git push (automatically removed before pushing)
+      ├── DEBUGS.log/
+      │   Show jobs running when run git commit (automatically removed before pushing)
+
+
+
+# Why do I need GitExcel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## General introduction: 
 In short, the solution is to making every part of Excel which is a binary file become text that is readable, changeable via text editor so that Git can check diff
