@@ -77,9 +77,11 @@ class SheetExcelObject:
 
     def rename_column(self, to):
         if to=='origin':
-            self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), ALPHABET_COL_NAME[:self.len_active_col])))
+            cols=ALPHABET_COL_NAME[:self.len_active_col]
         elif to=='header':
-            self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), self.df_values.iloc[self.header_line-1])))
+            cols=self.df_values.iloc[self.header_line-1]
+
+        self.df_values=self.df_values.rename(columns=dict(zip(list(self.df_values.columns), cols)))
 
 
     def get_record_title(self):
@@ -138,7 +140,7 @@ def gen_excel_as_text(excel_path, text_path, excel_cf, local_ALPHABET_COL_NAME):
     
     for sheet_name in workbook.sheetnames:
         sheet_keys=None
-        sheet_header_line=0
+        sheet_header_line=-1
         try:
             sheet_properties=excel_cf[sheet_name]
             try:
