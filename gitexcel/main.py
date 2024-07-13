@@ -62,7 +62,7 @@ def apply(path):
 
     print('Create changes log file')
     changes_log="Excel changes will be displayed here (no update to the repo)"
-    with open(CHANGES_LOG_PATH, 'w') as wf:
+    with open(f"{path}/{CHANGES_LOG_PATH}", 'w') as wf:
         wf.write(changes_log)
 
 
