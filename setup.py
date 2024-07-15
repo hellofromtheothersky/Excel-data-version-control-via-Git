@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 VERSION = "1.0"
 
 setup(
-    name="gitexcel",
+    name="gitexcely",
     description="Python CLI tool with Git for MS Excel version control using text",
     # long_description_content_type="text/markdown",
     author="Hieu Nguyen Hung Trung",
@@ -17,7 +17,7 @@ setup(
     setup_requires=["pytest-runner"],
     entry_points="""
         [console_scripts]
-        gitexcel=gitexcel:cli
+        gitexcely=gitexcely:cli
     """,
     url="https://github.com/hellofromtheothersky/Excel-data-version-control-via-Git",
 )

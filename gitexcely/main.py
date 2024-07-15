@@ -35,7 +35,7 @@ def apply(path):
     os.makedirs(f"{path}/{ALL_EXCEL_AS_TEXT_PATH}", exist_ok=True)
     
     print('Create pre-commit')
-    hook_commands="""#!/bin/sh\npip install gitexcel\ngitexcel auto_convert --path .\nEXIT_CODE=$?\nexit $EXIT_CODE"""
+    hook_commands="""#!/bin/sh\npip install gitexcely\ngitexcely auto_convert --path .\nEXIT_CODE=$?\nexit $EXIT_CODE"""
     # with open(f"{path}/.githooks/pre-commit", 'w') as wf:
     with open(f"{path}/.git/hooks/pre-commit", 'w') as wf:
         wf.write(hook_commands)

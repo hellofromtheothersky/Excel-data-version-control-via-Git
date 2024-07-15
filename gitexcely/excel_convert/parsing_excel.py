@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import json
 import openpyxl
-from gitexcel import log
+from gitexcely import log
 
 
 def parsing_format(x):

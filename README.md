@@ -1,5 +1,5 @@
 # Excel-data-version-control-via-Git
-GitExcel
+GitExcely
 A tool for spreadsheet version control in Excel, created by Python and using with Git
 # Getting Started
 ## Mechanism

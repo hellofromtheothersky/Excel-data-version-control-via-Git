@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import json
 import openpyxl
-from gitexcel import py_git, log
+from gitexcely import py_git, log
 
 
 def construct_format_object(format_dict):
